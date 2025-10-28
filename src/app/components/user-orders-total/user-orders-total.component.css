@@ -1,0 +1,16 @@
+.info-card {
+  margin-bottom: 15px;
+  background-color: #fff3e0;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.total-amount {
+  font-size: 20px;
+  color: #2e7d32;
+  font-weight: bold;
+}

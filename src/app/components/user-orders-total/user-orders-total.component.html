@@ -1,0 +1,8 @@
+<mat-card class="info-card">
+  <mat-card-content>
+    <div class="info-row">
+      <strong>Total Orders Amount:</strong>
+      <span class="total-amount">{{ (totalOrdersAmount$ | async) | currency:'USD':'symbol':'1.2-2' }}</span>
+    </div>
+  </mat-card-content>
+</mat-card>

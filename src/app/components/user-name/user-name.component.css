@@ -1,0 +1,16 @@
+.info-card {
+  margin-bottom: 15px;
+  background-color: #e3f2fd;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-name {
+  font-size: 18px;
+  color: #1565c0;
+  font-weight: 500;
+}

@@ -1,0 +1,48 @@
+<div class="user-orders-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>User Orders Management</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- User Selection Buttons (Requirement #5a) -->
+      <div class="user-selection">
+        <h3>Select a User:</h3>
+        <div class="button-group">
+          <button
+            mat-raised-button
+            *ngFor="let user of users$ | async"
+            (click)="onSelectUser(user.id)"
+            [color]="(selectedUserId$ | async) === user.id ? 'primary' : 'accent'"
+            class="user-button">
+            {{ user.name }}
+          </button>
+          <button
+            mat-raised-button
+            color="warn"
+            (click)="onClearSelection()">
+            Clear Selection
+          </button>
+        </div>
+      </div>
+
+      <mat-divider class="section-divider"></mat-divider>
+
+      <!-- Display User Summary (Requirement #5) -->
+      <div class="user-summary" *ngIf="(userSummary$ | async) as summary">
+        <div *ngIf="summary.userName; else noSelection">
+          <h3>Selected User Information</h3>
+
+          <!-- User Name Component -->
+          <app-user-name></app-user-name>
+
+          <!-- User Orders Total Component -->
+          <app-user-orders-total></app-user-orders-total>
+        </div>
+
+        <ng-template #noSelection>
+          <p class="no-selection">No user selected. Please select a user from the buttons above.</p>
+        </ng-template>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
